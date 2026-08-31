@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ravita Choudhary | Portfolio & Resume</title>
+  <meta name="description" content="Personal Portfolio of Ravita Choudhary - Computer Science & Engineering Undergraduate at Lovely Professional University. Explore Systems Programming, IoT projects, certifications, and downloadable resume." />
+  
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  
+  <!-- html2pdf.js for Direct High-Quality PDF Resume Generation -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="bg-[#0b0f19] text-slate-100 antialiased selection:bg-blue-500 selection:text-white">
+
+  <!-- Custom Glowing Interactive Cursor -->
+  <div id="cursor-dot" class="cursor-dot"></div>
+  <div id="cursor-outline" class="cursor-outline"></div>
+
+  <!-- Ambient Glow Blobs -->
+  <div class="hero-glow-blob-1"></div>
+  <div class="hero-glow-blob-2"></div>
+
+  <!-- Navigation Bar -->
+  <header class="fixed top-0 left-0 right-0 z-50 glass-nav transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <!-- Logo / Brand -->
+      <a href="#hero" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-cyan-400 flex items-center justify-center font-bold text-white shadow-lg shadow-blue-500/30 group-hover:scale-105 transition-transform">
+          RC
+        </div>
+        <div class="flex flex-col">
+          <span class="font-bold text-base tracking-tight text-white group-hover:text-cyan-400 transition-colors">Ravita Choudhary</span>
+          <span class="text-[11px] text-slate-400 font-mono">B.Tech CSE @ LPU</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-300">
+        <a href="#about" class="nav-link hover:text-cyan-400 transition-colors">About</a>
+        <a href="#skills" class="nav-link hover:text-cyan-400 transition-colors">Skills</a>
+        <a href="#projects" class="nav-link hover:text-cyan-400 transition-colors">Projects</a>
+        <a href="#experience" class="nav-link hover:text-cyan-400 transition-colors">Experience</a>
+        <a href="#certificates" class="nav-link hover:text-cyan-400 transition-colors">Certificates</a>
+        <a href="#resume" class="nav-link hover:text-cyan-400 transition-colors">Resume</a>
+        <a href="#contact" class="nav-link hover:text-cyan-400 transition-colors">Contact</a>
+      </nav>
+
+      <!-- Right Action Items -->
+      <div class="flex items-center gap-3">
+        <!-- Social Icons -->
+        <a href="https://github.com/ravita-choudhary3" target="_blank" rel="noopener noreferrer" title="GitHub Profile" class="w-9 h-9 rounded-lg bg-slate-800/80 border border-slate-700/60 flex items-center justify-center text-slate-300 hover:text-white hover:border-blue-500 transition-all">
+          <i class="fab fa-github text-base"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/ravita-choudhary-798377382/" target="_blank" rel="noopener noreferrer" title="LinkedIn Profile" class="w-9 h-9 rounded-lg bg-slate-800/80 border border-slate-700/60 flex items-center justify-center text-slate-300 hover:text-blue-400 hover:border-blue-500 transition-all">
+          <i class="fab fa-linkedin-in text-base"></i>
+        </a>
+
+        <!-- Dark/Light Theme Toggle -->
+        <button id="theme-toggle" title="Toggle Dark/Light Mode" class="w-9 h-9 rounded-lg bg-slate-800/80 border border-slate-700/60 flex items-center justify-center hover:border-blue-500 transition-all">
+          <i id="theme-icon" class="fas fa-sun text-yellow-400 text-base"></i>
+        </button>
+
+        <!-- Download CV Action Button -->
+        <a href="#resume" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 text-white text-xs font-semibold shadow-lg shadow-blue-500/25 hover:shadow-cyan-500/40 hover:-translate-y-0.5 transition-all">
+          <i class="fas fa-file-arrow-down"></i> Resume
+        </a>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" class="md:hidden w-9 h-9 rounded-lg bg-slate-800/80 border border-slate-700/60 flex items-center justify-center text-slate-300 hover:text-white">
+          <i class="fas fa-bars text-lg"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Navigation -->
+    <div id="mobile-nav" class="hidden md:hidden bg-slate-900/95 border-b border-slate-800 px-6 py-5 space-y-4 backdrop-blur-xl">
+      <a href="#about" class="mobile-nav-link block text-base font-medium text-slate-200 hover:text-cyan-400">About Me</a>
+      <a href="#skills" class="mobile-nav-link block text-base font-medium text-slate-200 hover:text-cyan-400">Skills Matrix</a>
+      <a href="#projects" class="mobile-nav-link block text-base font-medium text-slate-200 hover:text-cyan-400">Featured Projects</a>
+      <a href="#experience" class="mobile-nav-link block text-base font-medium text-slate-200 hover:text-cyan-400">Training & Innovation</a>
+      <a href="#certificates" class="mobile-nav-link block text-base font-medium text-slate-200 hover:text-cyan-400">Certificates</a>
+      <a href="#resume" class="mobile-nav-link block text-base font-medium text-slate-200 hover:text-cyan-400">Resume & Download</a>
+      <a href="#contact" class="mobile-nav-link block text-base font-medium text-slate-200 hover:text-cyan-400">Contact</a>
+      <div class="pt-3 border-t border-slate-800 flex gap-3">
+        <a href="https://github.com/ravita-choudhary3" target="_blank" class="text-slate-400 hover:text-white"><i class="fab fa-github text-xl"></i></a>
+        <a href="https://www.linkedin.com/in/ravita-choudhary-798377382/" target="_blank" class="text-slate-400 hover:text-blue-400"><i class="fab fa-linkedin text-xl"></i></a>
+        <a href="mailto:ravitakulriya@gmail.com" class="text-slate-400 hover:text-cyan-400"><i class="fas fa-envelope text-xl"></i></a>
+      </div>
+    </div>
+  </header>
+
+  <main class="relative z-10 pt-20 sm:pt-24">
+    <!-- ====================================================
+         HERO SECTION WITH PROFILE PHOTO
+    ===================================================== -->
+    <section id="hero" class="min-h-[90vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+      <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left Column: Intro & Content -->
+        <div class="lg:col-span-7 text-center lg:text-left">
+          <!-- Status Pill -->
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-400 text-xs font-semibold mb-6 animate-pulse">
+            <span class="w-2 h-2 rounded-full bg-emerald-400"></span> Open to Internships & Collaborative Engineering
+          </div>
+
+          <!-- Name & Main Title -->
+          <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight mb-4">
+            Hi, I'm <span class="text-gradient-cyan-blue">Ravita Choudhary</span>
+          </h1>
+
+          <!-- Typing Dynamic Role -->
+          <div class="h-10 mb-5 flex items-center justify-center lg:justify-start">
+            <span class="text-lg sm:text-2xl md:text-3xl font-semibold text-slate-300 font-mono">
+              <span id="typing-text"></span><span class="typing-cursor"></span>
+            </span>
+          </div>
+
+          <!-- Bio / Value Proposition -->
+          <p class="text-sm sm:text-base md:text-lg text-slate-400 max-w-2xl mx-auto lg:mx-0 mb-8 leading-relaxed">
+            B.Tech Computer Science & Engineering undergraduate at <strong>Lovely Professional University</strong> (CGPA: 7.73). Focused on low-level systems programming, custom operating systems in C, embedded IoT hardware, and data-driven problem solving.
+          </p>
+
+          <!-- CTA Buttons -->
+          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 mb-10">
+            <a href="#projects" class="btn-glow px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-sm flex items-center gap-2 shadow-lg shadow-blue-600/30">
+              <i class="fas fa-code"></i> View Projects
+            </a>
+            <a href="#resume" class="btn-glow px-6 py-3 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-semibold text-sm flex items-center gap-2 shadow-lg shadow-cyan-600/25">
+              <i class="fas fa-file-arrow-down"></i> Download Resume
+            </a>
+            <a href="#contact" class="px-6 py-3 rounded-xl bg-slate-800/60 hover:bg-slate-800 border border-slate-700/80 text-slate-300 font-semibold text-sm flex items-center gap-2 transition-all">
+              <i class="fas fa-paper-plane text-cyan-400"></i> Contact Me
+            </a>
+          </div>
+
+          <!-- Quick Contacts Bar -->
+          <div class="inline-flex flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-5 py-3 px-5 rounded-2xl glass-panel text-xs sm:text-sm text-slate-400">
+            <a href="mailto:ravitakulriya@gmail.com" class="flex items-center gap-1.5 hover:text-cyan-400 transition-colors">
+              <i class="fas fa-envelope text-blue-400"></i> ravitakulriya@gmail.com
+            </a>
+            <span class="hidden sm:inline text-slate-600">•</span>
+            <a href="tel:+919001616008" class="flex items-center gap-1.5 hover:text-cyan-400 transition-colors">
+              <i class="fas fa-phone text-emerald-400"></i> +91 9001616008
+            </a>
+            <span class="hidden sm:inline text-slate-600">•</span>
+            <a href="https://github.com/ravita-choudhary3" target="_blank" class="flex items-center gap-1.5 hover:text-white transition-colors">
+              <i class="fab fa-github text-slate-200"></i> @ravita-choudhary3
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Column: Profile Photo with Floating Tech Badges -->
+        <div class="lg:col-span-5 flex justify-center items-center relative">
+          <div class="relative w-64 h-72 sm:w-80 sm:h-96">
+            
+            <!-- Glowing Avatar Frame -->
+            <div class="profile-avatar-frame w-full h-full">
+              <img src="assets/profile.jpg" alt="Ravita Choudhary" class="profile-avatar-img shadow-2xl" />
+            </div>
+
+            <!-- Floating Badge 1: Retrium OS -->
+            <div class="absolute -top-4 -left-6 sm:-left-8 glass-panel px-3.5 py-2 rounded-xl border border-purple-500/40 shadow-xl flex items-center gap-2.5 animate-float">
+              <div class="w-8 h-8 rounded-lg bg-purple-500/20 text-purple-400 flex items-center justify-center text-sm font-bold">
+                <i class="fas fa-terminal"></i>
+              </div>
+              <div class="text-left">
+                <div class="text-[11px] font-bold text-white">Retrium OS</div>
+                <div class="text-[9px] text-purple-300 font-mono">Custom C Kernel</div>
+              </div>
+            </div>
+
+            <!-- Floating Badge 2: EV Smart Parking -->
+            <div class="absolute -bottom-4 -right-6 sm:-right-8 glass-panel px-3.5 py-2 rounded-xl border border-emerald-500/40 shadow-xl flex items-center gap-2.5 animate-float-delayed">
+              <div class="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-sm font-bold">
+                <i class="fas fa-bolt"></i>
+              </div>
+              <div class="text-left">
+                <div class="text-[11px] font-bold text-white">EV Smart Parking</div>
+                <div class="text-[9px] text-emerald-300 font-mono">IoT & ESP32 Prototyping</div>
+              </div>
+            </div>
+
+            <!-- Floating Badge 3: LPU Undergrad -->
+            <div class="absolute top-1/2 -right-6 sm:-right-10 transform -translate-y-1/2 glass-panel px-3 py-1.5 rounded-xl border border-blue-500/40 shadow-lg flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-blue-400 animate-ping"></span>
+              <span class="text-[10px] font-semibold text-slate-200">CGPA 7.73 @ LPU</span>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================
+         ABOUT & EDUCATION SECTION
+    ===================================================== -->
+    <section id="about" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <span class="code-tag">Background & Journey</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">About Me</h2>
+        <p class="text-slate-400 text-sm max-w-xl mx-auto mt-2">
+          An engineering student passionate about exploring how computers operate from the ground up — from kernel logic to circuit sensors.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+        <!-- Bio Card -->
+        <div class="lg:col-span-5 glass-panel rounded-2xl p-8 flex flex-col justify-between border border-slate-800">
+          <div>
+            <div class="flex items-center gap-4 mb-6">
+              <img src="assets/profile.jpg" alt="Ravita Choudhary" class="w-16 h-16 rounded-2xl object-cover border-2 border-cyan-400/50 shadow-md" />
+              <div>
+                <h3 class="text-xl font-bold text-white">Ravita Choudhary</h3>
+                <p class="text-xs text-cyan-400 font-medium">Systems & IoT Software Explorer</p>
+              </div>
+            </div>
+            <p class="text-slate-300 text-sm leading-relaxed mb-4">
+              I am currently pursuing my <strong>Bachelor of Technology in Computer Science & Engineering</strong> at Lovely Professional University. I am deeply interested in <strong>systems programming</strong>, operating system design, and the interaction between software and physical hardware.
+            </p>
+            <p class="text-slate-400 text-sm leading-relaxed mb-6">
+              Through projects like <strong>Retrium OS</strong> (custom operating system concepts in C) and <strong>EV Wireless Smart Parking</strong> (Arduino & ESP32), I bridge the gap between abstract computer science fundamentals and real-world implementation.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-3 gap-3 pt-6 border-t border-slate-800/80 text-center">
+            <div class="p-3 bg-slate-900/60 rounded-xl border border-slate-800">
+              <div class="text-xl font-extrabold text-blue-400">7.73</div>
+              <div class="text-[11px] text-slate-400 font-medium">LPU CGPA</div>
+            </div>
+            <div class="p-3 bg-slate-900/60 rounded-xl border border-slate-800">
+              <div class="text-xl font-extrabold text-cyan-400">8+</div>
+              <div class="text-[11px] text-slate-400 font-medium">Certifications</div>
+            </div>
+            <div class="p-3 bg-slate-900/60 rounded-xl border border-slate-800">
+              <div class="text-xl font-extrabold text-purple-400">525K+</div>
+              <div class="text-[11px] text-slate-400 font-medium">QuizOff Alum</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Education Timeline -->
+        <div class="lg:col-span-7 glass-panel rounded-2xl p-8 border border-slate-800 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-6">
+              <h3 class="text-xl font-bold text-white flex items-center gap-2">
+                <i class="fas fa-graduation-cap text-blue-400"></i> Education History
+              </h3>
+              <span class="code-tag emerald">Academic Record</span>
+            </div>
+
+            <div class="space-y-6 relative before:absolute before:left-3 before:top-2 before:bottom-2 before:w-0.5 before:bg-slate-800">
+              <!-- Item 1: LPU -->
+              <div class="relative pl-8 group">
+                <div class="absolute left-1.5 top-1.5 w-3.5 h-3.5 rounded-full bg-blue-500 ring-4 ring-slate-950 group-hover:scale-125 transition-transform"></div>
+                <div class="flex flex-wrap items-center justify-between gap-1 mb-1">
+                  <h4 class="font-bold text-base text-white group-hover:text-blue-400 transition-colors">Lovely Professional University (LPU)</h4>
+                  <span class="text-xs text-blue-400 font-mono bg-blue-500/10 px-2 py-0.5 rounded border border-blue-500/20">Aug '25 – Present</span>
+                </div>
+                <p class="text-sm font-medium text-slate-300">Bachelor of Technology — Computer Science and Engineering</p>
+                <div class="flex items-center gap-3 mt-1 text-xs text-slate-400">
+                  <span><i class="fas fa-map-marker-alt text-red-400 mr-1"></i> Phagwara, Punjab</span>
+                  <span>•</span>
+                  <span class="text-emerald-400 font-semibold">CGPA: 7.73</span>
+                </div>
+              </div>
+
+              <!-- Item 2: SVN School -->
+              <div class="relative pl-8 group">
+                <div class="absolute left-1.5 top-1.5 w-3.5 h-3.5 rounded-full bg-cyan-400 ring-4 ring-slate-950 group-hover:scale-125 transition-transform"></div>
+                <div class="flex flex-wrap items-center justify-between gap-1 mb-1">
+                  <h4 class="font-bold text-base text-white group-hover:text-cyan-400 transition-colors">SVN School</h4>
+                  <span class="text-xs text-slate-400 font-mono bg-slate-800 px-2 py-0.5 rounded">Mar '24 – May '25</span>
+                </div>
+                <p class="text-sm font-medium text-slate-300">Intermediate (Class XII) — Physics, Chemistry, Mathematics (PCM)</p>
+                <div class="flex items-center gap-3 mt-1 text-xs text-slate-400">
+                  <span><i class="fas fa-map-marker-alt text-red-400 mr-1"></i> Anupgarh, Rajasthan</span>
+                  <span>•</span>
+                  <span class="text-cyan-400 font-semibold">Score: 83%</span>
+                </div>
+              </div>
+
+              <!-- Item 3: DAV School -->
+              <div class="relative pl-8 group">
+                <div class="absolute left-1.5 top-1.5 w-3.5 h-3.5 rounded-full bg-purple-500 ring-4 ring-slate-950 group-hover:scale-125 transition-transform"></div>
+                <div class="flex flex-wrap items-center justify-between gap-1 mb-1">
+                  <h4 class="font-bold text-base text-white group-hover:text-purple-400 transition-colors">D.A.V School</h4>
+                  <span class="text-xs text-slate-400 font-mono bg-slate-800 px-2 py-0.5 rounded">Mar '22 – May '23</span>
+                </div>
+                <p class="text-sm font-medium text-slate-300">Matriculation (Class X)</p>
+                <div class="flex items-center gap-3 mt-1 text-xs text-slate-400">
+                  <span><i class="fas fa-map-marker-alt text-red-400 mr-1"></i> Bhadra, Rajasthan</span>
+                  <span>•</span>
+                  <span class="text-purple-400 font-semibold">Distinction: 94.00%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================
+         SKILLS MATRIX SECTION
+    ===================================================== -->
+    <section id="skills" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <span class="code-tag">Technical Competencies</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Skills & Toolkit</h2>
+        <p class="text-slate-400 text-sm max-w-xl mx-auto mt-2">
+          Structured overview of languages, computer science foundations, hardware prototyping tools, and methodologies.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Category 1: Languages -->
+        <div class="glass-panel rounded-2xl p-6 border border-slate-800">
+          <div class="flex items-center gap-3 mb-5">
+            <div class="w-10 h-10 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 text-lg">
+              <i class="fas fa-code"></i>
+            </div>
+            <h3 class="font-bold text-lg text-white">Programming Languages</h3>
+          </div>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="px-3 py-1.5 rounded-lg bg-blue-950/60 border border-blue-800/40 text-blue-300 font-mono text-xs font-semibold flex items-center gap-1.5"><i class="fas fa-terminal text-[10px]"></i> C++</span>
+            <span class="px-3 py-1.5 rounded-lg bg-blue-950/60 border border-blue-800/40 text-blue-300 font-mono text-xs font-semibold flex items-center gap-1.5"><i class="fab fa-python text-[10px]"></i> Python</span>
+            <span class="px-3 py-1.5 rounded-lg bg-blue-950/60 border border-blue-800/40 text-blue-300 font-mono text-xs font-semibold flex items-center gap-1.5"><i class="fas fa-microchip text-[10px]"></i> C</span>
+          </div>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Strong foundation in low-level memory control with C/C++ and scripting/data engineering workflows with Python.
+          </p>
+        </div>
+
+        <!-- Category 2: Core CS -->
+        <div class="glass-panel rounded-2xl p-6 border border-slate-800">
+          <div class="flex items-center gap-3 mb-5">
+            <div class="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 text-lg">
+              <i class="fas fa-brain"></i>
+            </div>
+            <h3 class="font-bold text-lg text-white">Core Computer Science</h3>
+          </div>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="px-3 py-1.5 rounded-lg bg-purple-950/60 border border-purple-800/40 text-purple-300 text-xs font-medium">Data Structures & Algorithms</span>
+            <span class="px-3 py-1.5 rounded-lg bg-purple-950/60 border border-purple-800/40 text-purple-300 text-xs font-medium">Operating System Concepts</span>
+            <span class="px-3 py-1.5 rounded-lg bg-purple-950/60 border border-purple-800/40 text-purple-300 text-xs font-medium">DBMS & Relational Data</span>
+            <span class="px-3 py-1.5 rounded-lg bg-purple-950/60 border border-purple-800/40 text-purple-300 text-xs font-medium">OOP (Object-Oriented)</span>
+            <span class="px-3 py-1.5 rounded-lg bg-purple-950/60 border border-purple-800/40 text-purple-300 text-xs font-medium">Software Engineering</span>
+            <span class="px-3 py-1.5 rounded-lg bg-purple-950/60 border border-purple-800/40 text-purple-300 text-xs font-medium">Computer Fundamentals</span>
+          </div>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Rigorous understanding of memory hierarchies, kernel processes, concurrency, algorithm efficiency, and schema design.
+          </p>
+        </div>
+
+        <!-- Category 3: Hardware & IoT -->
+        <div class="glass-panel rounded-2xl p-6 border border-slate-800">
+          <div class="flex items-center gap-3 mb-5">
+            <div class="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 text-lg">
+              <i class="fas fa-microchip"></i>
+            </div>
+            <h3 class="font-bold text-lg text-white">Hardware & Simulation</h3>
+          </div>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="px-3 py-1.5 rounded-lg bg-amber-950/60 border border-amber-800/40 text-amber-300 text-xs font-medium">Proteus Circuit Simulator</span>
+            <span class="px-3 py-1.5 rounded-lg bg-amber-950/60 border border-amber-800/40 text-amber-300 text-xs font-medium">Arduino Architecture</span>
+            <span class="px-3 py-1.5 rounded-lg bg-amber-950/60 border border-amber-800/40 text-amber-300 text-xs font-medium">ESP32 Microcontroller</span>
+            <span class="px-3 py-1.5 rounded-lg bg-amber-950/60 border border-amber-800/40 text-amber-300 text-xs font-medium">Tinkercad</span>
+            <span class="px-3 py-1.5 rounded-lg bg-amber-950/60 border border-amber-800/40 text-amber-300 text-xs font-medium">Wokwi Simulator</span>
+            <span class="px-3 py-1.5 rounded-lg bg-amber-950/60 border border-amber-800/40 text-amber-300 text-xs font-medium">ACS712 Current Sensor</span>
+          </div>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Hands-on circuit prototyping, sensor interfacing, buck converters, and electrical behavior simulation.
+          </p>
+        </div>
+
+        <!-- Category 4: Developer Tools -->
+        <div class="glass-panel rounded-2xl p-6 border border-slate-800">
+          <div class="flex items-center gap-3 mb-5">
+            <div class="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 text-lg">
+              <i class="fas fa-tools"></i>
+            </div>
+            <h3 class="font-bold text-lg text-white">Developer Tools & Platforms</h3>
+          </div>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-slate-200 text-xs font-medium">Git & GitHub</span>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-slate-200 text-xs font-medium">VS Code</span>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-slate-200 text-xs font-medium">Jupyter Notebook</span>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-slate-200 text-xs font-medium">Streamlit</span>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-slate-200 text-xs font-medium">Tableau</span>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-slate-200 text-xs font-medium">RapidMiner</span>
+          </div>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Version control, collaborative repository management, interactive data applications, and data engineering toolkits.
+          </p>
+        </div>
+
+        <!-- Category 5: Design & 3D -->
+        <div class="glass-panel rounded-2xl p-6 border border-slate-800">
+          <div class="flex items-center gap-3 mb-5">
+            <div class="w-10 h-10 rounded-xl bg-pink-500/10 border border-pink-500/20 flex items-center justify-center text-pink-400 text-lg">
+              <i class="fas fa-cubes"></i>
+            </div>
+            <h3 class="font-bold text-lg text-white">Design & 3D Modelling</h3>
+          </div>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="px-3 py-1.5 rounded-lg bg-pink-950/60 border border-pink-800/40 text-pink-300 text-xs font-medium">Blender 3D</span>
+            <span class="px-3 py-1.5 rounded-lg bg-pink-950/60 border border-pink-800/40 text-pink-300 text-xs font-medium">3D Modelling</span>
+            <span class="px-3 py-1.5 rounded-lg bg-pink-950/60 border border-pink-800/40 text-pink-300 text-xs font-medium">Spatial Concept Design</span>
+          </div>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            3D rendering and component modeling for hardware housings, visualization, and physical prototyping concepts.
+          </p>
+        </div>
+
+        <!-- Category 6: Soft Skills -->
+        <div class="glass-panel rounded-2xl p-6 border border-slate-800">
+          <div class="flex items-center gap-3 mb-5">
+            <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 text-lg">
+              <i class="fas fa-handshake"></i>
+            </div>
+            <h3 class="font-bold text-lg text-white">Soft Skills & Leadership</h3>
+          </div>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="px-3 py-1.5 rounded-lg bg-emerald-950/60 border border-emerald-800/40 text-emerald-300 text-xs font-medium">Problem Solving</span>
+            <span class="px-3 py-1.5 rounded-lg bg-emerald-950/60 border border-emerald-800/40 text-emerald-300 text-xs font-medium">Teamwork</span>
+            <span class="px-3 py-1.5 rounded-lg bg-emerald-950/60 border border-emerald-800/40 text-emerald-300 text-xs font-medium">Communication</span>
+            <span class="px-3 py-1.5 rounded-lg bg-emerald-950/60 border border-emerald-800/40 text-emerald-300 text-xs font-medium">Adaptability</span>
+            <span class="px-3 py-1.5 rounded-lg bg-emerald-950/60 border border-emerald-800/40 text-emerald-300 text-xs font-medium">Leadership</span>
+            <span class="px-3 py-1.5 rounded-lg bg-emerald-950/60 border border-emerald-800/40 text-emerald-300 text-xs font-medium">Time Management</span>
+          </div>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Proven collaboration in hackathons, innovation challenges with IITs, and structured agile project execution.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================
+         FEATURED PROJECTS SECTION (WITH GITHUB LINKS)
+    ===================================================== -->
+    <section id="projects" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <span class="code-tag">Portfolio Work</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Featured Projects</h2>
+        <p class="text-slate-400 text-sm max-w-xl mx-auto mt-2">
+          Systems-level and hardware-oriented projects built with source code available on GitHub.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <!-- PROJECT 1: RETRIUM OS -->
+        <div class="project-card glass-panel rounded-2xl p-8 border border-slate-800 flex flex-col justify-between group">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="code-tag purple flex items-center gap-1.5">
+                <i class="fas fa-terminal"></i> Systems Programming
+              </span>
+              <span class="text-xs text-slate-400 font-mono"><i class="far fa-calendar-alt mr-1"></i> Jul '23</span>
+            </div>
+
+            <h3 class="text-2xl font-extrabold text-white group-hover:text-blue-400 transition-colors mb-3">
+              RETRIUM OS — Custom Operating System
+            </h3>
+
+            <p class="text-sm text-slate-300 mb-6 leading-relaxed">
+              An independent custom operating system project built to dive deep into low-level systems programming, understanding how code interacts directly with computer hardware without modern OS abstractions.
+            </p>
+
+            <div class="space-y-3 mb-6 bg-slate-900/60 rounded-xl p-5 border border-slate-800/80">
+              <h4 class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Key Accomplishments</h4>
+              <ul class="space-y-2 text-xs text-slate-300">
+                <li class="flex items-start gap-2">
+                  <i class="fas fa-check-circle text-blue-400 mt-0.5"></i>
+                  <span>Developed an independent custom OS in <strong>C</strong> to explore low-level systems programming and OS fundamentals.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i class="fas fa-check-circle text-blue-400 mt-0.5"></i>
+                  <span>Programmed system-level mechanics to directly comprehend the bridge between software instructions and hardware execution.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i class="fas fa-check-circle text-blue-400 mt-0.5"></i>
+                  <span>Explored fundamental operating system principles including architecture, memory layout, process flow, I/O handling, and kernel-level operations.</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Tech Tags -->
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="code-tag">C Language</span>
+              <span class="code-tag purple">Operating Systems</span>
+              <span class="code-tag">Kernel Architecture</span>
+              <span class="code-tag emerald">Memory & Processes</span>
+              <span class="code-tag amber">Systems Programming</span>
+            </div>
+          </div>
+
+          <!-- Project Footer / GitHub Link -->
+          <div class="pt-6 border-t border-slate-800/80 flex flex-wrap items-center justify-between gap-4">
+            <a href="https://github.com/ravita-choudhary3/Retrium-OS" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold shadow-lg shadow-blue-600/20 transition-all">
+              <i class="fab fa-github text-sm"></i> View on GitHub <i class="fas fa-arrow-up-right-from-square text-[10px] ml-1"></i>
+            </a>
+            <span class="text-xs text-slate-400 font-mono">Repo: <code class="text-slate-200">Retrium-OS</code></span>
+          </div>
+        </div>
+
+        <!-- PROJECT 2: EV WIRELESS CHARGING SMART PARKING SYSTEM -->
+        <div class="project-card glass-panel rounded-2xl p-8 border border-slate-800 flex flex-col justify-between group">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="code-tag emerald flex items-center gap-1.5">
+                <i class="fas fa-bolt"></i> IoT & Hardware
+              </span>
+              <span class="text-xs text-slate-400 font-mono"><i class="far fa-calendar-alt mr-1"></i> Nov '25</span>
+            </div>
+
+            <h3 class="text-2xl font-extrabold text-white group-hover:text-emerald-400 transition-colors mb-3">
+              EV WIRELESS CHARGING SMART PARKING SYSTEM
+            </h3>
+
+            <p class="text-sm text-slate-300 mb-6 leading-relaxed">
+              An intelligent, hardware-integrated EV wireless charging mechanism combined with an automated smart parking concept to eliminate physical charging cables and streamline electric vehicle infrastructure.
+            </p>
+
+            <div class="space-y-3 mb-6 bg-slate-900/60 rounded-xl p-5 border border-slate-800/80">
+              <h4 class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Key Accomplishments</h4>
+              <ul class="space-y-2 text-xs text-slate-300">
+                <li class="flex items-start gap-2">
+                  <i class="fas fa-check-circle text-emerald-400 mt-0.5"></i>
+                  <span>Designed an EV wireless inductive charging system integrated with a smart parking automation concept.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i class="fas fa-check-circle text-emerald-400 mt-0.5"></i>
+                  <span>Integrated <strong>Arduino</strong>, <strong>ESP32</strong>, <strong>ACS712 current sensor</strong>, bridge rectifier, and buck converter into a cohesive hardware architecture.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i class="fas fa-check-circle text-emerald-400 mt-0.5"></i>
+                  <span>Simulated and validated complete circuit components using <strong>Proteus</strong> to verify electrical behavior and steady power delivery.</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Tech Tags -->
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="code-tag emerald">Arduino</span>
+              <span class="code-tag emerald">ESP32</span>
+              <span class="code-tag amber">ACS712 Current Sensor</span>
+              <span class="code-tag purple">Proteus Simulation</span>
+              <span class="code-tag">Buck Converter</span>
+              <span class="code-tag">Smart IoT</span>
+            </div>
+          </div>
+
+          <!-- Project Footer / GitHub Link -->
+          <div class="pt-6 border-t border-slate-800/80 flex flex-wrap items-center justify-between gap-4">
+            <a href="https://github.com/ravita-choudhary3/EV-Wireless-Charging-Smart-Parking" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-semibold shadow-lg shadow-emerald-600/20 transition-all">
+              <i class="fab fa-github text-sm"></i> View on GitHub <i class="fas fa-arrow-up-right-from-square text-[10px] ml-1"></i>
+            </a>
+            <span class="text-xs text-slate-400 font-mono">Repo: <code class="text-slate-200">EV-Wireless-Charging</code></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- GitHub Profile Banner -->
+      <div class="mt-8 p-6 rounded-2xl glass-panel border border-slate-800 flex flex-wrap items-center justify-between gap-4">
+        <div class="flex items-center gap-4">
+          <div class="w-12 h-12 rounded-xl bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-200 text-2xl">
+            <i class="fab fa-github"></i>
+          </div>
+          <div>
+            <h4 class="font-bold text-white text-base">Explore more repositories on GitHub</h4>
+            <p class="text-xs text-slate-400">Discover all code experiments, algorithms, and open-source contributions.</p>
+          </div>
+        </div>
+        <a href="https://github.com/ravita-choudhary3" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white text-xs font-semibold border border-slate-700 flex items-center gap-2 transition-all">
+          Visit @ravita-choudhary3 <i class="fas fa-external-link-alt text-[10px]"></i>
+        </a>
+      </div>
+    </section>
+
+    <!-- ====================================================
+         TRAINING & HACKATHONS / INNOVATION EXPERIENCE
+    ===================================================== -->
+    <section id="experience" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <span class="code-tag emerald">Innovation & Training</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Experience & Hackathons</h2>
+        <p class="text-slate-400 text-sm max-w-xl mx-auto mt-2">
+          Competitive innovation challenges, institution hackathons, and structured training programs.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Experience 1: CM YUVA with IIT Kanpur -->
+        <div class="glass-panel rounded-2xl p-8 border border-slate-800 relative group">
+          <div class="flex items-center justify-between mb-4">
+            <span class="code-tag emerald flex items-center gap-1.5">
+              <i class="fas fa-lightbulb"></i> Entrepreneurship & Innovation
+            </span>
+            <span class="text-xs text-slate-400 font-mono">Jun '23 – Jul '23</span>
+          </div>
+
+          <h3 class="text-xl font-bold text-white group-hover:text-emerald-400 transition-colors mb-1">
+            CM YUVA Innovation Challenge
+          </h3>
+          <p class="text-xs font-semibold text-emerald-400 mb-4 flex items-center gap-1.5">
+            <i class="fas fa-university"></i> Indian Institute of Technology (IIT), Kanpur
+          </p>
+
+          <p class="text-sm text-slate-300 mb-6 leading-relaxed">
+            Selected for an intensive innovation program fostering startup ideation, problem validation, and scalable business strategy alongside leading tech mentors.
+          </p>
+
+          <ul class="space-y-2.5 text-xs text-slate-300 bg-slate-900/60 p-5 rounded-xl border border-slate-800">
+            <li class="flex items-start gap-2">
+              <i class="fas fa-check text-emerald-400 mt-0.5"></i>
+              <span>Worked on idea development, root-cause problem identification, solution strategy, and pitch presentation.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i class="fas fa-check text-emerald-400 mt-0.5"></i>
+              <span>Gained exposure to entrepreneurship, innovation frameworks, business strategy, and startup-oriented problem solving.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i class="fas fa-check text-emerald-400 mt-0.5"></i>
+              <span>Presented the proposed solution in a high-stakes competitive environment and collaborated with fellow participants and innovators.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Experience 2: Top Tier Competitions & Hackathons -->
+        <div class="glass-panel rounded-2xl p-8 border border-slate-800 relative group flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="code-tag purple flex items-center gap-1.5">
+                <i class="fas fa-trophy"></i> National Competitions
+              </span>
+              <span class="text-xs text-slate-400 font-mono">2026 / 2025</span>
+            </div>
+
+            <h3 class="text-xl font-bold text-white group-hover:text-purple-400 transition-colors mb-1">
+              Top Institutional Hackathons & AI Challenges
+            </h3>
+            <p class="text-xs font-semibold text-purple-400 mb-4 flex items-center gap-1.5">
+              <i class="fas fa-globe"></i> Global & National Platforms (Unstop, IITs, NITs)
+            </p>
+
+            <div class="space-y-3 mb-4">
+              <div class="p-3 bg-slate-900/60 rounded-xl border border-slate-800/80">
+                <h5 class="text-xs font-bold text-white flex items-center gap-2">
+                  <i class="fas fa-brain text-blue-400"></i> Google Gemini QuizOff 2026 (#TeamGemini)
+                </h5>
+                <p class="text-[11px] text-slate-400 mt-1">
+                  Competed among 525,000+ students across 48,500+ institutions in India's biggest AI challenge.
+                </p>
+              </div>
+
+              <div class="p-3 bg-slate-900/60 rounded-xl border border-slate-800/80">
+                <h5 class="text-xs font-bold text-white flex items-center gap-2">
+                  <i class="fas fa-rocket text-purple-400"></i> TrueFoundry GenAI ProdEdge — IIT Kharagpur
+                </h5>
+                <p class="text-[11px] text-slate-400 mt-1">
+                  Product case competition designing generative AI solutions for industry scale.
+                </p>
+              </div>
+
+              <div class="p-3 bg-slate-900/60 rounded-xl border border-slate-800/80">
+                <h5 class="text-xs font-bold text-white flex items-center gap-2">
+                  <i class="fas fa-gamepad text-amber-400"></i> Arcadia Rivals — NIT Tiruchirappalli
+                </h5>
+                <p class="text-[11px] text-slate-400 mt-1">
+                  Flagship competitive technical and problem-solving event hosted on Unstop.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-slate-800 text-xs text-slate-400 flex items-center justify-between">
+            <span>Verified Participation</span>
+            <a href="#certificates" class="text-blue-400 font-semibold hover:underline">View All Certificates →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================
+         CERTIFICATES & CREDENTIALS SECTION
+    ===================================================== -->
+    <section id="certificates" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <div class="text-center mb-12">
+        <span class="code-tag purple">Verified Credentials</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Certificates & Badges</h2>
+        <p class="text-slate-400 text-sm max-w-xl mx-auto mt-2">
+          Click any certificate to inspect details, issuing institutions, and key competencies.
+        </p>
+
+        <!-- Filter Controls -->
+        <div class="flex flex-wrap items-center justify-center gap-2 mt-8">
+          <button data-filter="all" class="filter-btn active px-4 py-2 rounded-xl text-xs font-semibold bg-slate-800/80 border border-slate-700 text-slate-300 transition-all">
+            All Credentials
+          </button>
+          <button data-filter="ai-competitions" class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-slate-800/80 border border-slate-700 text-slate-300 transition-all">
+            AI & Competitions
+          </button>
+          <button data-filter="data-tech" class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-slate-800/80 border border-slate-700 text-slate-300 transition-all">
+            Data Engineering & Analytics
+          </button>
+          <button data-filter="programming" class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-slate-800/80 border border-slate-700 text-slate-300 transition-all">
+            Python & SQL
+          </button>
+        </div>
+      </div>
+
+      <!-- Dynamic Grid Container -->
+      <div id="certificates-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Injected dynamically via js/main.js -->
+      </div>
+    </section>
+
+    <!-- ====================================================
+         INTERACTIVE RESUME & DOWNLOAD FEATURE SECTION
+    ===================================================== -->
+    <section id="resume" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <div class="text-center mb-12">
+        <span class="code-tag">Document Center</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Curriculum Vitae / Resume</h2>
+        <p class="text-slate-400 text-sm max-w-xl mx-auto mt-2">
+          View my full interactive resume below or download a print-ready, ATS-compliant PDF directly to your device.
+        </p>
+
+        <!-- Resume Action Buttons Bar -->
+        <div class="flex flex-wrap items-center justify-center gap-3 mt-8">
+          <!-- Primary PDF Download Button -->
+          <button id="download-resume-btn" class="btn-glow px-6 py-3.5 rounded-xl bg-gradient-to-r from-blue-600 via-cyan-500 to-emerald-500 text-white font-bold text-sm shadow-xl shadow-blue-600/30 flex items-center gap-2 cursor-pointer">
+            <i class="fas fa-file-pdf text-lg"></i> Download Resume (PDF)
+          </button>
+
+          <!-- Plain Text ATS Download -->
+          <button id="download-txt-btn" class="px-5 py-3.5 rounded-xl bg-slate-800/90 hover:bg-slate-700 border border-slate-700 text-slate-200 font-semibold text-xs sm:text-sm flex items-center gap-2 transition-all cursor-pointer">
+            <i class="fas fa-file-lines text-cyan-400"></i> Download ATS Text (.txt)
+          </button>
+
+          <!-- Native Print View -->
+          <button id="print-resume-btn" class="px-4 py-3.5 rounded-xl bg-slate-800/90 hover:bg-slate-700 border border-slate-700 text-slate-300 font-semibold text-xs sm:text-sm flex items-center gap-2 transition-all cursor-pointer">
+            <i class="fas fa-print text-blue-400"></i> Print View
+          </button>
+
+          <!-- Quick Copy Tools -->
+          <button id="copy-email-btn" class="px-4 py-3.5 rounded-xl bg-slate-800/50 hover:bg-slate-800 border border-slate-700 text-slate-300 text-xs font-semibold flex items-center gap-1.5 transition-all cursor-pointer" title="Copy Email">
+            <i class="far fa-copy text-emerald-400"></i> Email
+          </button>
+          <button id="copy-phone-btn" class="px-4 py-3.5 rounded-xl bg-slate-800/50 hover:bg-slate-800 border border-slate-700 text-slate-300 text-xs font-semibold flex items-center gap-1.5 transition-all cursor-pointer" title="Copy Phone">
+            <i class="fas fa-phone-alt text-cyan-400"></i> Phone
+          </button>
+        </div>
+      </div>
+
+      <!-- Printable Styled Resume Sheet Container -->
+      <div id="printable-resume-container" class="resume-sheet">
+        <!-- Resume Header -->
+        <div class="border-b-2 border-slate-800 pb-4 mb-4">
+          <h1 class="resume-header-name">Ravita Choudhary</h1>
+          <div class="flex flex-wrap items-center justify-between text-xs text-slate-700 mt-2 gap-y-1">
+            <div>
+              <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/ravita-choudhary-798377382/" target="_blank" class="resume-link">linkedin.com/in/ravita-choudhary-798377382</a>
+            </div>
+            <div>
+              <strong>Email:</strong> <a href="mailto:ravitakulriya@gmail.com" class="resume-link">ravitakulriya@gmail.com</a>
+            </div>
+          </div>
+          <div class="flex flex-wrap items-center justify-between text-xs text-slate-700 mt-1 gap-y-1">
+            <div>
+              <strong>GitHub:</strong> <a href="https://github.com/ravita-choudhary3" target="_blank" class="resume-link">github.com/ravita-choudhary3</a>
+            </div>
+            <div>
+              <strong>Mobile:</strong> +91 9001616008
+            </div>
+          </div>
+        </div>
+
+        <!-- SKILLS SECTION -->
+        <div class="resume-section-title">SKILLS</div>
+        <div class="text-xs text-slate-800 space-y-1.5">
+          <p><strong>Languages:</strong> C++, Python, C</p>
+          <p><strong>Core Computer Science:</strong> Data Structures & Algorithms, DBMS, Object-Oriented Programming, Software Engineering, Operating System Concepts, Computer Fundamentals</p>
+          <p><strong>Tools/Platforms:</strong> Git, GitHub, VS Code, Proteus, Tinker cad, Wokwi, Jupyter Notebook, Streamlit</p>
+          <p><strong>Design:</strong> Blender, 3D Modelling</p>
+          <p><strong>Soft Skills:</strong> Problem Solving, Teamwork, Communication, Adaptability, Leadership, Time Management</p>
+        </div>
+
+        <!-- PROJECTS SECTION -->
+        <div class="resume-section-title">PROJECTS</div>
+        <div class="space-y-4 text-xs text-slate-800">
+          <!-- Project 1 -->
+          <div>
+            <div class="flex justify-between items-baseline font-bold text-slate-900">
+              <span>RETRIUM OS — Custom Operating System <span class="font-normal text-slate-600">| C | Operating Systems | Systems Programming</span></span>
+              <span class="text-slate-600">Jul ’23</span>
+            </div>
+            <ul class="list-disc list-inside mt-1 space-y-1 text-slate-700">
+              <li>Developed an independent custom operating system named <strong>Retrium OS</strong> to explore low-level systems programming and operating system concepts.</li>
+              <li>Worked with C and system-level programming concepts to understand the interaction between software and computer hardware.</li>
+              <li>Explored fundamental operating system concepts including system architecture, memory, processes, input/output, and kernel-level operations.</li>
+              <li class="no-print font-medium text-blue-700">GitHub: <a href="https://github.com/ravita-choudhary3/Retrium-OS" target="_blank" class="underline">https://github.com/ravita-choudhary3/Retrium-OS</a></li>
+            </ul>
+          </div>
+
+          <!-- Project 2 -->
+          <div>
+            <div class="flex justify-between items-baseline font-bold text-slate-900">
+              <span>EV WIRELESS CHARGING SMART PARKING SYSTEM <span class="font-normal text-slate-600">| Arduino | ESP32 | ACS712 | Proteus</span></span>
+              <span class="text-slate-600">Nov ’25</span>
+            </div>
+            <ul class="list-disc list-inside mt-1 space-y-1 text-slate-700">
+              <li>Designed an EV wireless charging system integrated with a smart parking concept for electric vehicles.</li>
+              <li>Worked with Arduino, ESP32, ACS712 current sensor, bridge rectifier, and buck converter for the hardware system.</li>
+              <li>Designed and simulated circuit components using <strong>Proteus</strong> to study system functionality and electrical behavior.</li>
+              <li class="no-print font-medium text-blue-700">GitHub: <a href="https://github.com/ravita-choudhary3/EV-Wireless-Charging-Smart-Parking" target="_blank" class="underline">https://github.com/ravita-choudhary3/EV-Wireless-Charging-Smart-Parking</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- TRAINING SECTION -->
+        <div class="resume-section-title">TRAINING & EXPERIENCE</div>
+        <div class="text-xs text-slate-800">
+          <div class="flex justify-between items-baseline font-bold text-slate-900">
+            <span>CM YUVA Innovation Challenge with IIT Kanpur</span>
+            <span class="text-slate-600">Jun ’23 – Jul ’23</span>
+          </div>
+          <ul class="list-disc list-inside mt-1 space-y-1 text-slate-700">
+            <li>Worked on idea development, problem identification, solution strategy, and presentation.</li>
+            <li>Gained exposure to entrepreneurship, innovation, business strategy, and startup-oriented problem solving.</li>
+            <li>Presented the proposed solution in a competitive environment and collaborated with other participants and innovators.</li>
+          </ul>
+        </div>
+
+        <!-- CERTIFICATES SECTION -->
+        <div class="resume-section-title">CERTIFICATES & ACHIEVEMENTS</div>
+        <div class="text-xs text-slate-800 space-y-1">
+          <div class="flex justify-between">
+            <span><strong>Google Gemini QuizOff 2026</strong> | CampusCrew (#TeamGemini) — 525K+ Competitors</span>
+            <span class="text-slate-600">Jul ’26</span>
+          </div>
+          <div class="flex justify-between">
+            <span><strong>TrueFoundry GenAI ProdEdge Case Competition</strong> | IIT Kharagpur</span>
+            <span class="text-slate-600">Recent</span>
+          </div>
+          <div class="flex justify-between">
+            <span><strong>Arcadia Rivals</strong> | National Institute of Technology (NIT), Tiruchirappalli</span>
+            <span class="text-slate-600">Recent</span>
+          </div>
+          <div class="flex justify-between">
+            <span><strong>Data Visualization with Tableau</strong> | Coursera</span>
+            <span class="text-slate-600">May ’24</span>
+          </div>
+          <div class="flex justify-between">
+            <span><strong>Data Engineering Professional Certification</strong> | Altair Inc. RapidMiner</span>
+            <span class="text-slate-600">Apr ’24</span>
+          </div>
+          <div class="flex justify-between">
+            <span><strong>Python</strong> | HackerRank</span>
+            <span class="text-slate-600">Mar ’23</span>
+          </div>
+          <div class="flex justify-between">
+            <span><strong>SQL</strong> | HackerRank</span>
+            <span class="text-slate-600">Mar ’23</span>
+          </div>
+        </div>
+
+        <!-- EDUCATION SECTION -->
+        <div class="resume-section-title">EDUCATION</div>
+        <div class="text-xs text-slate-800 space-y-2">
+          <div>
+            <div class="flex justify-between font-bold text-slate-900">
+              <span>Lovely Professional University</span>
+              <span>Phagwara, Punjab</span>
+            </div>
+            <div class="flex justify-between text-slate-700">
+              <span>Bachelor of Technology — Computer Science and Engineering; CGPA: 7.73</span>
+              <span class="text-slate-600">Aug ’25 – Present</span>
+            </div>
+          </div>
+          <div>
+            <div class="flex justify-between font-bold text-slate-900">
+              <span>SVN School</span>
+              <span>Anupgarh, Rajasthan</span>
+            </div>
+            <div class="flex justify-between text-slate-700">
+              <span>Intermediate (PCM); Percentage: 83%</span>
+              <span class="text-slate-600">Mar ’24 – May ’25</span>
+            </div>
+          </div>
+          <div>
+            <div class="flex justify-between font-bold text-slate-900">
+              <span>D.A.V School</span>
+              <span>Bhadra, Rajasthan</span>
+            </div>
+            <div class="flex justify-between text-slate-700">
+              <span>Matriculation; Percentage: 94.00%</span>
+              <span class="text-slate-600">Mar ’22 – May ’23</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================
+         CONTACT SECTION
+    ===================================================== -->
+    <section id="contact" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <span class="code-tag">Get in Touch</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Let's Connect</h2>
+        <p class="text-slate-400 text-sm max-w-xl mx-auto mt-2">
+          Whether you'd like to discuss systems engineering, collaborate on an IoT project, or explore internship opportunities, feel free to reach out!
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        <!-- Contact Info Cards -->
+        <div class="lg:col-span-5 space-y-4">
+          <!-- Email Card -->
+          <a href="mailto:ravitakulriya@gmail.com" class="glass-panel p-6 rounded-2xl flex items-center gap-4 hover:border-blue-500/50 block group">
+            <div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 text-xl group-hover:scale-110 transition-transform">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div>
+              <span class="text-xs text-slate-400 font-medium">Direct Email</span>
+              <h4 class="font-bold text-white group-hover:text-blue-400 transition-colors">ravitakulriya@gmail.com</h4>
+            </div>
+          </a>
+
+          <!-- Phone Card -->
+          <a href="tel:+919001616008" class="glass-panel p-6 rounded-2xl flex items-center gap-4 hover:border-emerald-500/50 block group">
+            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 text-xl group-hover:scale-110 transition-transform">
+              <i class="fas fa-phone-alt"></i>
+            </div>
+            <div>
+              <span class="text-xs text-slate-400 font-medium">Mobile Phone</span>
+              <h4 class="font-bold text-white group-hover:text-emerald-400 transition-colors">+91 9001616008</h4>
+            </div>
+          </a>
+
+          <!-- LinkedIn Card -->
+          <a href="https://www.linkedin.com/in/ravita-choudhary-798377382/" target="_blank" rel="noopener noreferrer" class="glass-panel p-6 rounded-2xl flex items-center gap-4 hover:border-blue-500/50 block group">
+            <div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 text-xl group-hover:scale-110 transition-transform">
+              <i class="fab fa-linkedin-in"></i>
+            </div>
+            <div>
+              <span class="text-xs text-slate-400 font-medium">LinkedIn Network</span>
+              <h4 class="font-bold text-white group-hover:text-blue-400 transition-colors">ravita-choudhary-798377382</h4>
+            </div>
+          </a>
+
+          <!-- GitHub Card -->
+          <a href="https://github.com/ravita-choudhary3" target="_blank" rel="noopener noreferrer" class="glass-panel p-6 rounded-2xl flex items-center gap-4 hover:border-slate-500 block group">
+            <div class="w-12 h-12 rounded-xl bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-300 text-xl group-hover:scale-110 transition-transform">
+              <i class="fab fa-github"></i>
+            </div>
+            <div>
+              <span class="text-xs text-slate-400 font-medium">GitHub Repositories</span>
+              <h4 class="font-bold text-white group-hover:text-cyan-400 transition-colors">@ravita-choudhary3</h4>
+            </div>
+          </a>
+        </div>
+
+        <!-- Contact Message Form -->
+        <div class="lg:col-span-7 glass-panel p-8 rounded-2xl border border-slate-800">
+          <h3 class="text-xl font-bold text-white mb-2">Send a Message</h3>
+          <p class="text-xs text-slate-400 mb-6">Leave your note below and it will prepare a pre-filled direct message for my inbox.</p>
+
+          <form id="contact-form" class="space-y-4">
+            <div>
+              <label for="contact-name" class="block text-xs font-semibold text-slate-300 mb-1">Your Name</label>
+              <input type="text" id="contact-name" required placeholder="e.g. Alex Sharma" class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-700/80 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-blue-500 transition-colors" />
+            </div>
+
+            <div>
+              <label for="contact-email" class="block text-xs font-semibold text-slate-300 mb-1">Your Email Address</label>
+              <input type="email" id="contact-email" required placeholder="name@company.com" class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-700/80 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-blue-500 transition-colors" />
+            </div>
+
+            <div>
+              <label for="contact-message" class="block text-xs font-semibold text-slate-300 mb-1">Message / Inquiry</label>
+              <textarea id="contact-message" rows="4" required placeholder="Hello Ravita, I saw your Retrium OS and EV Smart Parking project..." class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-700/80 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-blue-500 transition-colors"></textarea>
+            </div>
+
+            <button type="submit" class="w-full btn-glow py-3.5 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-bold text-sm shadow-lg shadow-blue-600/30 flex items-center justify-center gap-2 cursor-pointer">
+              <i class="fas fa-paper-plane"></i> Send Direct Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ====================================================
+       FOOTER
+  ===================================================== -->
+  <footer class="border-t border-slate-800/80 py-8 px-4 sm:px-6 lg:px-8 text-center text-xs text-slate-500 relative z-10">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2">
+        <span class="font-bold text-slate-300">Ravita Choudhary</span>
+        <span>•</span>
+        <span>Lovely Professional University</span>
+      </div>
+      <div class="flex items-center gap-4 text-slate-400">
+        <a href="https://github.com/ravita-choudhary3" target="_blank" class="hover:text-white"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/ravita-choudhary-798377382/" target="_blank" class="hover:text-blue-400"><i class="fab fa-linkedin"></i></a>
+        <a href="mailto:ravitakulriya@gmail.com" class="hover:text-cyan-400"><i class="fas fa-envelope"></i></a>
+      </div>
+      <div>
+        Designed & Developed for Engineering Excellence
+      </div>
+    </div>
+  </footer>
+
+  <!-- ====================================================
+       CERTIFICATE MODAL VIEWER
+  ===================================================== -->
+  <div id="cert-modal-overlay" class="modal-overlay">
+    <div class="modal-container relative">
+      <button id="cert-modal-close" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-slate-800/80 border border-slate-700 flex items-center justify-center text-slate-300 hover:text-white hover:bg-slate-700 transition-colors z-20" title="Close Modal">
+        <i class="fas fa-times text-sm"></i>
+      </button>
+      <div id="cert-modal-body">
+        <!-- Content inserted dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript Modules -->
+  <script src="js/main.js"></script>
+  <script src="js/resume.js"></script>
+</body>
+</html>
